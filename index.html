@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head lang="en">
+<meta charset="utf-8">
+<title>D3 SVG Line Generation Example 2</title>
+<style>
+* {
+	font-family:"Trebuchet MS","sans-serif";
+}
+</style>
+<link rel="stylesheet" href="libs/jquery-ui-1.12.1.custom/jquery-ui.min.css"/>
+<link rel="stylesheet" href="libs/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css"/>
+<link rel="stylesheet" href="libs/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css"/>
+<script src="libs/jquery-3.3.1.min.js"> </script>
+<script src="libs/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+<script src="libs/underscore-min.js"></script>
+<script src="libs/d3.js"></script>
+</head>
+<body>
+<h2>Balanced Volumes Demo App #1</h2>
+<div id="navigation_div">
+    <span>Select a route:
+        <select id="select_route">
+            <option value="i93_nb">I-93 Northbound</option>
+            <option value="i93_sb" selected>I-93 Southbound</option>
+            <option value="sr3_sb">SR-3 Southbound</option>
+            <option value="sr3_nb">SR-3 Northbound</option>
+        </select>
+    </span>
+</div>
+
+<div id="i93_nb_accordion" class="accordion">
+  <h3>First header</h3>
+  <div id="i93_nb_viz_0"></div>
+  <h3>Second header</h3>
+  <div id="i93_nb_viz_1"></div>
+  <h3>Third header</h3>
+  <div id="i93_nb_viz_2"></div>
+  <h3>Fourth header</h3>
+  <div id="i93_nb_viz_3"></div>
+  <h3>Fifth header</h3>
+  <div id="i93nb_viz_4"></div>
+  <h3>Sixth header</h3>
+  <div id="i93nb_viz_5"></div>
+</div>
+
+<div id="i93_sb_accordion" class="accordion">
+  <h3>Wilmington</h3>
+  <div id="i93_sb_viz_0"></div>
+  <h3>Woburn to Stoneham</h3>
+  <div id="i93_sb_viz_1"></div>
+  <h3>Medford to Somerville</h3>
+  <div id="i93_sb_viz_2"></div>
+  <h3>Storrow Drive to Kneeland Street</h3>
+  <div id="i93_sb_viz_3"></div>  
+   <h3>Kneeland Street to Columbia Road</h3>
+  <div id="i93_sb_viz_4"></div>
+  <h3>Freeport Street to Braintree</h3>
+  <div id="i93_sb_viz_5"></div>   
+</div>
+
+<div id="sr3_nb_accordion" class="accordion">
+  <h3>Rockland to Braintree</h3>
+  <div id="sr3_nb_viz_0"></div>
+</div>
+
+<div id="sr3_sb_accordion" class="accordion">
+  <h3>Braintree to Rockland</h3>
+  <div id="sr3_sb_viz_0"></div>
+</div>
+
+<script src="balanced_volumes_viz.js"></script>
+
+</body>
+</html>
