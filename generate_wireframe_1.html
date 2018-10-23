@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head lang="en">
+<meta charset="utf-8">
+<title>D3 SVG Line Generation Example</title>
+<style>
+* {
+	font-family:"Trebuchet MS","sans-serif";
+}
+</style>
+<script src="libs/d3.js"></script>
+</head>
+<body>
+<h2>D3 SVG Line Generation Example</h2>
+<script>
+// Baseline example to generate "wireframe" linework from CSV input.
+var aSegs = ["i93_sb_wilmington.csv", "i93_sb_woburn_to_stoneham.csv", "i93_sb_medford_to_somerville.csv",
+             "i93_sb_storrow_to_kneeland.csv", "i93_sb_kneeland_to_columbia.csv", "i93_sb_freeport_to_braintree.csv" ];
+d3.csv('data/' + aSegs[3], 
+    function(error, data) { 
+        if (error !== null) {
+            alert("error loading CSV data: " + error.statusText);
+        } else {
+            generateSvg(data);
+        }
+    });
+
+function generateSvg(csvData) {	
+    // Make numeric data in CSV usable
+    csvData.forEach(function(i) {
+        i.x1 = +i.x1;
+        i.y1 = +i.y1;
+        i.x2 = +i.x2;
+        i.y2 = +i.y2;
+    });
+    
+	// Define SVG container ('viewport')
+	var width = 3550,
+		height = 750;
+		
+	var svgContainer = d3.select("body").append("svg")
+		.attr("width", width)
+		.attr("height", height)
+		.style("border", "2px solid steelblue");
+
+    var svgRouteSegs = svgContainer
+		.selectAll("line")
+		.data(csvData)
+		.enter()
+		.append("line")
+            .attr("id", function(d, i) { return d.unique_id; })
+            .attr("x1", function(d, i) { return d.x1; })
+            .attr("y1", function(d, i) { return d.y1; })
+            .attr("x2", function(d, i) { return d.x2; })
+            .attr("y2", function(d, i) { return d.y2; })
+            .attr("class", function(d, i) { return d.type; })
+			.style("stroke", function(d, i) { return (( i % 2 ) == 0 ? "red" : "blue"); })
+			.style("stroke-width", "2px")
+			.on("click", function(d, i) { consle.log(d.unique_id); });
+    
+    svgContainer.selectAll("text")
+        .data(csvData)
+        .enter()
+        .append("text")
+            .attr("id", function(d, i) { return 'txt_' +d.unique_id; })
+            .attr("class", function(d, i) { return 'txt_' + d.type; })
+            .text(function(d, i) { return d.unique_id; })
+            .attr("x", function(d, i) { return d.x1 + ((d.x2 - d.x1)/2); })
+            .attr("y", function(d, i) { return d.y1 + ((d.y2 - d.y1)/2) - 5; })
+            .attr("text-anchor", "middle");
+ 
+} 
+</script>
+</body>
+</html>
