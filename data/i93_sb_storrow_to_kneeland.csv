@@ -1,0 +1,33 @@
+unique_id,n_delta_x,x1,y1,x2,y2,type,description
+i93_sb_470,2,10,100,210,100,main,I-93 southbound between Interchange 29 on-ramp and Interchange 28A off-ramp
+i93_sb_480,3,210,100,510,100,main,I-93 southbound between Interhange 28A off-ramp and on-ramp from Route 1
+i93_sb_490,2,510,100,710,100,main,I-93 southbound between on-ramp from Route 1 and merge with HOV lane
+i93_sb_500,2,710,100,910,100,main,I-93 southbound between merge with HOV lane and on-ramp from Storrow Drive
+i93_sb_510,2,910,100,1110,100,main,I-93 southbound between on-ramp from Storrow Drive and off-ramp for Interchange 24 A and B
+i93_sb_520,4,1110,100,1510,100,main,I-93 southbound between off-ramp for Interhange 24 A and B and Government Center on-ramp
+i93_sb_530,2,1510,100,1710,100,main,I-93 southbond between Government Center on-ramp and Interchange 23 off-ramp
+i93_sb_540,2,1710,100,1910,100,main,I-93 southbound between Interchange 23 off-ramp and Interchange 22 off-ramp
+i93_sb_550,6,1910,100,2510,100,main,I-93 southbound between Interchange 22 off-ramp and Lincoln Street on-ramp
+i93_sb_560,2,2510,100,2710,100,main,I-93 southbound between Lincoln Street on-ramp and on-ramp from C-D road
+i93_sb_570,2,2710,100,2910,100,man,I-93 southbound betwee on-ramp from C-D road and on-ramp from I-90
+i93_sb_hov_01,6,10,50,610,50,hov,HOV lane
+i93_sb_hov_01a,1,610,50,710,100,hov,HOV lane
+R12197,1,210,100,310,150,ramp,Interchange 28A off-ramp to Leverett Circle
+R12198,1,410,150,510,100,ramp,Interchange 28A on-ramp from Route 1
+R12110,1,810,150,910,100,ramp,Interchange 24 on-ramp from Storrow Drive
+R12111,1,1110,100,1210,150,ramp,Interchange 24 off-ramp
+R12112,1,1210,150,1310,150,ramp,Interchange 24B off-ramp to Logan Airport
+R12113,1,1210,150,1310,200,ramp,Interchange 24A off-ramp to Government Center
+R12114,1,1410,150,1510,100,ramp,Interchange 24 on-ramp from Government Center
+R12115,1,1710,100,1810,150,ramp,Interchange 23 off-ramp to Purchase Street
+R12116,1,1910,100,2010,150,ramp,Interchange 22 off-ramp
+TBD_001,1,2010,150,2110,150,cdroad,C-D road between Exit 23 off-ramp and Exit 22 off-ramp
+TBD_002,3,2110,150,2410,150,cdroad,C-D road between Interchange 22 off-ramp and Congress Street on-ramp
+TBD_003,2,2410,150,2610,150,cdroad,C-D road between Congress Street on-ramp and I-90 off-ramp / on-ramp to I-93 southbound
+R12117,1,2110,150,2210,200,ramp,Interchange 22 off-ramp to Summer Street
+R12118,1,2310,200,2410,150,ramp,Interchange 22 on-ramp from Congress Street
+R12125,1,2610,150,2710,100,ramp,On-ramp from C-D road
+R12119,1,2610,150,2710,200,ramp,"Off-ramp from C-D road to I-90 eastbound, I-90 westbound, and Albany Street"
+R12121,1,2710,200,2810,200,ramp,Off-ramp to Albany Street
+R50132,1,2710,200,2810,250,ramp,Off-ramp to I-90 westbound
+R12124,1,2410,50,2510,100,ramp,Interchange 22 on-ramp from Lincoln Street
