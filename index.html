@@ -1,12 +1,8 @@
 <!DOCTYPE html>
 <head lang="en">
 <meta charset="utf-8">
-<title>D3 SVG Line Generation Example 2</title>
-<style>
-* {
-	font-family:"Trebuchet MS","sans-serif";
-}
-</style>
+<title>Balanced Volumes Demo App #1</title>
+<link rel="stylesheet" href="balanced_volumes_viz.css"/>
 <link rel="stylesheet" href="libs/jquery-ui-1.12.1.custom/jquery-ui.min.css"/>
 <link rel="stylesheet" href="libs/jquery-ui-1.12.1.custom/jquery-ui.structure.min.css"/>
 <link rel="stylesheet" href="libs/jquery-ui-1.12.1.custom/jquery-ui.theme.min.css"/>
@@ -27,48 +23,133 @@
         </select>
     </span>
 </div>
-
 <div id="i93_nb_accordion" class="accordion">
-  <h3>First header</h3>
-  <div id="i93_nb_viz_0"></div>
-  <h3>Second header</h3>
-  <div id="i93_nb_viz_1"></div>
-  <h3>Third header</h3>
-  <div id="i93_nb_viz_2"></div>
-  <h3>Fourth header</h3>
-  <div id="i93_nb_viz_3"></div>
-  <h3>Fifth header</h3>
-  <div id="i93nb_viz_4"></div>
-  <h3>Sixth header</h3>
-  <div id="i93nb_viz_5"></div>
+    <h3>First header</h3>
+    <div id="i93_nb_viz_0">
+    </div>
+    <h3>Second header</h3>
+    <div id="i93_nb_viz_1">
+    </div>
+    <h3>Third header</h3>
+    <div id="i93_nb_viz_2">
+    </div>
+    <h3>Fourth header</h3>
+    <div id="i93_nb_viz_3">
+    </div>
+    <h3>Fifth header</h3>
+    <div id="i93nb_viz_4">
+    </div>
+    <h3>Sixth header</h3>
+    <div id="i93nb_viz_5">
+    </div>
 </div>
-
 <div id="i93_sb_accordion" class="accordion">
-  <h3>Wilmington</h3>
-  <div id="i93_sb_viz_0"></div>
-  <h3>Woburn to Stoneham</h3>
-  <div id="i93_sb_viz_1"></div>
-  <h3>Medford to Somerville</h3>
-  <div id="i93_sb_viz_2"></div>
-  <h3>Storrow Drive to Kneeland Street</h3>
-  <div id="i93_sb_viz_3"></div>  
-   <h3>Kneeland Street to Columbia Road</h3>
-  <div id="i93_sb_viz_4"></div>
-  <h3>Freeport Street to Braintree</h3>
-  <div id="i93_sb_viz_5"></div>   
+    <h3>Wilmington</h3>
+    <div id="i93_sb_viz_0">
+        <select class="select_metric">
+            <option metric="awdt_2010"            class="option_awdt" selected>2010 Average Weekday Daily Traffic</option>
+            <option metric="peak_2010_6_to_7_am"  class="option_peak_2010_6_to_7_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_7_to_8_am"  class="option_peak_2010_7_to_8_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_8_to_9_am"  class="option_peak_2010_8_to_9_am">2010 Volume 8 to 9 AM</option>
+            <option metric="peak_2010_9_to_10_am" class="option_peak_2010_9_to_10_am">2010 Volume 9 to 10 AM</option>
+            <option metric="peak_2010_3_to_4_pm"  class="option_peak_2010_3_to_4_pm">2010 Volume 3 to 4 PM</option>
+            <option metric="peak_2010_4_to_5_pm"  class="option_peak_2010_4_to_5_pm">2010 Volume 4 to 5 PM in 2010</option>
+            <option metric="peak_2010_5_to_6_pm"  class="option_peak_2010_5_to_6_pm">2010 Volume 5 to 6 PM</option>
+            <option metric="peak_2010_6_to_7_pm"  class="option_peak_2010_6_to_7_pm">2010 Volume 6 to 7 PM</option>
+        </select>
+    </div>
+    <h3>Woburn to Stoneham</h3>
+    <div id="i93_sb_viz_1">
+        <select class="select_metric">
+            <option metric="awdt_2010"            class="option_awdt" selected>2010 Average Weekday Daily Traffic</option>
+            <option metric="peak_2010_6_to_7_am"  class="option_peak_2010_6_to_7_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_7_to_8_am"  class="option_peak_2010_7_to_8_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_8_to_9_am"  class="option_peak_2010_8_to_9_am">2010 Volume 8 to 9 AM</option>
+            <option metric="peak_2010_9_to_10_am" class="option_peak_2010_9_to_10_am">2010 Volume 9 to 10 AM</option>
+            <option metric="peak_2010_3_to_4_pm"  class="option_peak_2010_3_to_4_pm">2010 Volume 3 to 4 PM</option>
+            <option metric="peak_2010_4_to_5_pm"  class="option_peak_2010_4_to_5_pm">2010 Volume 4 to 5 PM </option>
+            <option metric="peak_2010_5_to_6_pm"  class="option_peak_2010_5_to_6_pm">2010 Volume 5 to 6 PM</option>
+            <option metric="peak_2010_6_to_7_pm"  class="option_peak_2010_6_to_7_pm">2010 Volume 6 to 7 PM</option>
+        </select> 
+    </div>
+    <h3>Medford to Somerville</h3>
+    <div id="i93_sb_viz_2">
+        <select class="select_metric">
+            <option metric="awdt_2010"            class="option_awdt" selected>2010 Average Weekday Daily Traffic</option>
+            <option metric="peak_2010_6_to_7_am"  class="option_peak_2010_6_to_7_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_7_to_8_am"  class="option_peak_2010_7_to_8_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_8_to_9_am"  class="option_peak_2010_8_to_9_am">2010 Volume 8 to 9 AM</option>
+            <option metric="peak_2010_9_to_10_am" class="option_peak_2010_9_to_10_am">2010 Volume 9 to 10 AM</option>
+            <option metric="peak_2010_3_to_4_pm"  class="option_peak_2010_3_to_4_pm">2010 Volume 3 to 4 PM</option>
+            <option metric="peak_2010_4_to_5_pm"  class="option_peak_2010_4_to_5_pm">2010 Volume 4 to 5 PM</option>
+            <option metric="peak_2010_5_to_6_pm"  class="option_peak_2010_5_to_6_pm">2010 Volume 5 to 6 PM</option>
+            <option metric="peak_2010_6_to_7_pm"  class="option_peak_2010_6_to_7_pm">2010 Volume 6 to 7 PM</option>
+        </select> 
+    </div>
+    <h3>Storrow Drive to Kneeland Street</h3>
+    <div id="i93_sb_viz_3">
+        <select class="select_metric">
+            <option metric="awdt_2010"            class="option_awdt" selected>2010 Average Weekday Daily Traffic</option>
+            <option metric="peak_2010_6_to_7_am"  class="option_peak_2010_6_to_7_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_7_to_8_am"  class="option_peak_2010_7_to_8_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_8_to_9_am"  class="option_peak_2010_8_to_9_am">2010 Volume 8 to 9 AM</option>
+            <option metric="peak_2010_9_to_10_am" class="option_peak_2010_9_to_10_am">2010 Volume 9 to 10 AM</option>
+            <option metric="peak_2010_3_to_4_pm"  class="option_peak_2010_3_to_4_pm">2010 Volume 3 to 4 PM</option>
+            <option metric="peak_2010_4_to_5_pm"  class="option_peak_2010_4_to_5_pm">2010 Volume 4 to 5 PM </option>
+            <option metric="peak_2010_5_to_6_pm"  class="option_peak_2010_5_to_6_pm">2010 Volume 5 to 6 PM</option>
+            <option metric="peak_2010_6_to_7_pm"  class="option_peak_2010_6_to_7_pm">2010 Volume 6 to 7 PM</option>
+        </select> 
+    </div>  
+    <h3>Kneeland Street to Columbia Road</h3>
+    <div id="i93_sb_viz_4">
+        <select class="select_metric">
+            <option metric="awdt_2010"            class="option_awdt" selected>2010 Average Weekday Daily Traffic</option>
+            <option metric="peak_2010_6_to_7_am"  class="option_peak_2010_6_to_7_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_7_to_8_am"  class="option_peak_2010_7_to_8_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_8_to_9_am"  class="option_peak_2010_8_to_9_am">2010 Volume 8 to 9 AM</option>
+            <option metric="peak_2010_9_to_10_am" class="option_peak_2010_9_to_10_am">2010 Volume 9 to 10 AM</option>
+            <option metric="peak_2010_3_to_4_pm"  class="option_peak_2010_3_to_4_pm">2010 Volume 3 to 4 PM</option>
+            <option metric="peak_2010_4_to_5_pm"  class="option_peak_2010_4_to_5_pm">2010 Volume 4 to 5 PM</option>
+            <option metric="peak_2010_5_to_6_pm"  class="option_peak_2010_5_to_6_pm">2010 Volume 5 to 6 PM</option>
+            <option metric="peak_2010_6_to_7_pm"  class="option_peak_2010_6_to_7_pm">2010 Volume 6 to 7 PM</option>
+        </select> 
+    </div>
+    <h3>Freeport Street to Braintree</h3>
+    <div id="i93_sb_viz_5">
+        <select class="select_metric">
+            <option metric="awdt_2010"            class="option_awdt" selected>2010 Average Weekday Daily Traffic</option>
+            <option metric="peak_2010_6_to_7_am"  class="option_peak_2010_6_to_7_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_7_to_8_am"  class="option_peak_2010_7_to_8_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_8_to_9_am"  class="option_peak_2010_8_to_9_am">2010 Volume 8 to 9 AM</option>
+            <option metric="peak_2010_9_to_10_am" class="option_peak_2010_9_to_10_am">2010 Volume 9 to 10 AM</option>
+            <option metric="peak_2010_3_to_4_pm"  class="option_peak_2010_3_to_4_pm">2010 Volume 3 to 4 PM</option>
+            <option metric="peak_2010_4_to_5_pm"  class="option_peak_2010_4_to_5_pm">2010 Volume 4 to 5 PM</option>
+            <option metric="peak_2010_5_to_6_pm"  class="option_peak_2010_5_to_6_pm">2010 Volume 5 to 6 PM</option>
+            <option metric="peak_2010_6_to_7_pm"  class="option_peak_2010_6_to_7_pm">2010 Volume 6 to 7 PM</option>
+        </select> 
+    </div>   
 </div>
-
 <div id="sr3_nb_accordion" class="accordion">
-  <h3>Rockland to Braintree</h3>
-  <div id="sr3_nb_viz_0"></div>
+    <h3>Rockland to Braintree</h3>
+    <div id="sr3_nb_viz_0">
+        <select class="select_metric">
+            <option metric="awdt_2010"            class="option_awdt" selected>2010 Average Weekday Daily Traffic</option>
+            <option metric="peak_2010_6_to_7_am"  class="option_peak_2010_6_to_7_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_7_to_8_am"  class="option_peak_2010_7_to_8_am">2010 Volume 7 to 8 AM</option>
+            <option metric="peak_2010_8_to_9_am"  class="option_peak_2010_8_to_9_am">2010 Volume 8 to 9 AM</option>
+            <option metric="peak_2010_9_to_10_am" class="option_peak_2010_9_to_10_am">2010 Volume 9 to 10 AM</option>
+            <option metric="peak_2010_3_to_4_pm"  class="option_peak_2010_3_to_4_pm">2010 Volume 3 to 4 PM</option>
+            <option metric="peak_2010_4_to_5_pm"  class="option_peak_2010_4_to_5_pm">2010 Volume 4 to 5 PM</option>
+            <option metric="peak_2010_5_to_6_pm"  class="option_peak_2010_5_to_6_pm">2010 Volume 5 to 6 PM</option>
+            <option metric="peak_2010_6_to_7_pm"  class="option_peak_2010_6_to_7_pm">2010 Volume 6 to 7 PM</option>
+        </select> 
+    </div>
 </div>
-
 <div id="sr3_sb_accordion" class="accordion">
-  <h3>Braintree to Rockland</h3>
-  <div id="sr3_sb_viz_0"></div>
+    <h3>Braintree to Rockland</h3>
+    <div id="sr3_sb_viz_0">
+    </div>
 </div>
-
 <script src="balanced_volumes_viz.js"></script>
-
 </body>
 </html>
