@@ -41,6 +41,23 @@ var volumePaletteColor = d3.scaleThreshold()
 var volumePaletteWidth = d3.scaleThreshold()
                      .domain([0, 25000, 50000, 75000, 100000, 150000])
                      .range(["1px", "2px", "3px", "4px", "5px", "6px"]);   
+                     
+var colorPalettes = {
+    'awdt'  :   d3.scaleThreshold()
+                    .domain([0, 25000, 50000, 75000, 100000, 150000])
+                    .range(["gray", "blue", "green", "yellow", "orange", "red"]),
+    'hourly':   d3.scaleThreshold()
+                    .domain([0, 2000, 4000, 6000, 8000, 10000])
+                    .range(["gray", "blue", "green", "yellow", "orange", "red"])
+};
+var widthPalettes = {
+    'awdt'  :   d3.scaleThreshold()
+                    .domain([0, 25000, 50000, 75000, 100000, 150000])
+                    .range(["1px", "2px", "3px", "4px", "5px", "6px"]),
+    'hourly':   d3.scaleThreshold()
+                    .domain([0, 2000, 4000, 6000, 8000, 10000])
+                    .range(["1px", "2px", "3px", "4px", "5px", "6px"])
+};
 
 function initialize() {
     $('.accordion').accordion({ heightStyle: 'content' });
@@ -202,9 +219,11 @@ function generateViz(routeName, panelIx, lineData) {
 // according to the selected metric
 function symbolizeViz(routeStr, panelNum, metric) {
     var chartApi = panelsState[routeStr].panels[panelNum].chartApi;
+    var colorPalette = metric.search('awdt') !== -1 ? colorPalettes.awdt : colorPalettes.hourly;
+    var widthPalette = metric.search('awdt') !== -1 ? widthPalettes.awdt : widthPalettes.hourly;
     chartApi.lines
-        .style("stroke", function(d, i) { return volumePaletteColor(d.volumes[metric]); }) 
-        .style("stroke-width", function(d, i) { return volumePaletteWidth(d.volumes[metric]); });
+        .style("stroke", function(d, i) { return colorPalette(d.volumes[metric]); }) 
+        .style("stroke-width", function(d, i) { return widthPalette(d.volumes[metric]); });
     chartApi.txt
         .text(function(d, i) { return d.volumes[metric].toLocaleString(); });    
 } // symbolizeViz()
